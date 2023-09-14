@@ -3,29 +3,24 @@ import Card from './card'
 
 function App() {
 
-    // let shuf_semojis = emojis.sort(()=>(Math.random()> .5 ) ? 2 : -1);
-
-    // const emojis = ['🍉', '🍊', '🍎', '🍇', '🥭',
-    //     '🥝', '🍓', '🍒', '🍉', '🍊', '🍎', '🍇', '🥭',
-    //     '🥝', '🍓', '🍒'];
 
     const [boxOfData, setBoxdata] = useState([
-        { id: 0, emojis: '🍉', match: false },
-        { id: 1, emojis: '🍊', match: false },
-        { id: 2, emojis: '🍇', match: false },
-        { id: 3, emojis: '🍒', match: false },
-        { id: 4, emojis: '🍎', match: false },
-        { id: 5, emojis: '🥝', match: false },
-        { id: 0, emojis: '🍉', match: false },
-        { id: 1, emojis: '🍊', match: false },
-        { id: 2, emojis: '🍇', match: false },
-        { id: 3, emojis: '🍒', match: false },
-        { id: 4, emojis: '🍎', match: false },
-        { id: 5, emojis: '🥝', match: false },
-        { id: 6, emojis: '🍓', match: false },
-        { id: 7, emojis: '🥭', match: false },
-        { id: 6, emojis: '🍓', match: false },
-        { id: 7, emojis: '🥭', match: false }].sort(() => Math.random() - .5));
+        { id: 0, img: 'black', match: false },
+        { id: 1, img: 'red', match: false },
+        { id: 2, img: 'orange', match: false },
+        { id: 3, img: 'blue', match: false },
+        { id: 7, img: 'yellow', match: false },
+        { id: 4, img: 'white', match: false },
+        { id: 5, img: 'cyan', match: false },
+        { id: 0, img: 'black', match: false },
+        { id: 6, img: 'purple', match: false },
+        { id: 1, img: 'red', match: false },
+        { id: 2, img: 'orange', match: false },
+        { id: 3, img: 'blue', match: false },
+        { id: 4, img: 'white', match: false },
+        { id: 5, img: 'cyan', match: false },
+        { id: 6, img: 'purple', match: false },
+        { id: 7, img: 'yellow', match: false }].sort(() => Math.random() - .5));
 
     const [totalMatch, setTotalMatch] = useState(0)
     const prevIndex = useRef(-1);
@@ -33,11 +28,14 @@ function App() {
 
     const matching = (currentIndex) => {
 
-        if (boxOfData[prevIndex.current].emojis == boxOfData[currentIndex].emojis) {
+        if (boxOfData[prevIndex.current].img == boxOfData[currentIndex].img) {
             boxOfData[prevIndex.current].match = true;
             boxOfData[currentIndex].match = true;
             setPrevCard(-1);
-            setTotalMatch(totalMatch + 1)
+            setTimeout(function(){
+                setTotalMatch(totalMatch + 1)
+            },400)
+            
 
 
         } else {
@@ -58,7 +56,7 @@ function App() {
     const flip = (num) => {
         if (num != prevIndex.current) {
             if (boxOfData[num].match == true) {
-                alert("currently selected")
+               
             }
             else {
                 if (prevCard == -1) {
@@ -74,7 +72,7 @@ function App() {
                 }
             }
         } else {
-            alert("currently selected")
+            
         }
     }
 
@@ -86,7 +84,7 @@ function App() {
                     <div className="title">
 
                         <h1>
-                            {totalMatch == 8 ? "You Won" : "Memory Game"}</h1>
+                            {totalMatch == 8 ? "You Won !!!" : "Memory Game"}</h1>
                     </div>
                     <div className="box-container">
                         {totalMatch == 8 ? " " :
@@ -109,7 +107,9 @@ function App() {
                         </div> : ""}
 
                 </div>
+              
             </section>
+            
         </>
     )
 }

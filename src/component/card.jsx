@@ -9,7 +9,8 @@ function card({index, card, flip}) {
              onClick={()=>flip(index)}
             
              >
-            {card.emojis}
+            <img src={'./imgs/'+card.img+'.png'}></img>
+           
            
         </div>
     )
