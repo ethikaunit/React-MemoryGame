@@ -84,7 +84,7 @@ function App() {
                     <div className="title">
 
                         <h1>
-                            {totalMatch == 8 ? "You Won !!!" : "Memory Game"}</h1>
+                            {totalMatch == 8 ? "You Won !!!" : "Memory change"}</h1>
                     </div>
                     <div className="box-container">
                         {totalMatch == 8 ? " " :
