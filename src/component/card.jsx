@@ -1,12 +1,12 @@
 import React from 'react'
-import black './imgs/black.png'
-import blue './imgs/blue.png'
-import cyan './imgs/cyan.png'
-import orange './imgs/orange.png'
-import purple './imgs/purple.png'
-import red './imgs/red.png'
-import white './imgs/white.png'
-import yellow './imgs/yellow.png'
+import black from './imgs/black.png'
+import blue from './imgs/blue.png'
+import cyan from './imgs/cyan.png'
+import orange from './imgs/orange.png'
+import purple from './imgs/purple.png'
+import red from './imgs/red.png'
+import white from './imgs/white.png'
+import yellow from './imgs/yellow.png'
 
 
 function card({index, card, flip}) {
