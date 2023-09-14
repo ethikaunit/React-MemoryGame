@@ -1,12 +1,4 @@
 import React from 'react'
-import black from './imgs/black.png'
-import blue from './imgs/blue.png'
-import cyan from './imgs/cyan.png'
-import orange from './imgs/orange.png'
-import purple from './imgs/purple.png'
-import red from './imgs/red.png'
-import white from './imgs/white.png'
-import yellow from './imgs/yellow.png'
 
 
 function card({index, card, flip}) {
@@ -18,7 +10,7 @@ function card({index, card, flip}) {
              onClick={()=>flip(index)}
             
              >
-            <img src={card.img}></img>
+            <img src={'./imgs/'+card.img+'.png'}></img>
            
            
         </div>
